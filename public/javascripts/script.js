@@ -61,8 +61,7 @@ $(document).on('ready', function() {
 		$hideInfo.toggleClass('hide');
 		// add text to button to show more info on table
 		if($hideInfo.hasClass('hide')) {
-			$buttonShowHide.text('More Information...');
-				
+			$buttonShowHide.text('More Information...');		
 		} else {
 			// if full table is shown, add following text to button
 			$buttonShowHide.text('<-- Less');
@@ -73,18 +72,25 @@ $(document).on('ready', function() {
 	/**
 	 * Contact Area
 	 */
-	var $github = $('#git-hub'),
-		$linkedin = $('#linked-in'),
-		$googleplus = $('#google-plus');
+	// github, linkedin, googleplus and twitter icons.
+	var $github 	= $('#git-hub'),
+		$linkedin 	= $('#linked-in'),
+		$googleplus = $('#google-plus'),
+		$twitter 	= $('#twitter');
+
+	// show icons when hover
 	$('#connect').mouseover(function() {
 		$github.fadeIn(200);
 		$linkedin.fadeIn(400);
 		$googleplus.fadeIn(600);
+		$twitter.fadeIn(800);
 	});
+	// after 5 sec., hide icons assuming user will or will not click on it
 	$('#connect').mouseleave(function() {
 		$github.fadeOut(5000);
 		$linkedin.fadeOut(5000);
 		$googleplus.fadeOut(5000);
+		$twitter.fadeOut(5000);
 	});
 
 

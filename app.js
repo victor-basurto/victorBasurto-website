@@ -15,11 +15,8 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+// enabling LessCSS
 app.use(lessMiddleware(__dirname + '/public'));
-
-
-// Use Less and Compress the Result
-// app.use('/less-css', expressLess(__dirname + '/less', { compress: true }));
 
 
 // uncomment after placing your favicon in /public
