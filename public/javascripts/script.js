@@ -31,7 +31,7 @@ $(document).on('ready', function() {
 	/**
 	 * Smooth Scrolling Sections
 	 */
-	$('a[href*=#]:not([href=#])').click(function() {
+	$('a[href*=#]:not([href=#])').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -43,4 +43,50 @@ $(document).on('ready', function() {
 			}
 		}
 	});
+
+	/**
+	 * Resume Area
+	 */
+	// resume button variable
+	var $buttonShowHide = $('#show-hide');
+	// resume hideInfo class from table
+	var $hideInfo = $('.hide-info');
+	// hide table content
+	$hideInfo.addClass('hide');
+
+	/**
+	 * On Click Toggle Method to show and hide information from table on Resume Section
+	 */
+	$buttonShowHide.on('click', function() {
+		$hideInfo.toggleClass('hide');
+		// add text to button to show more info on table
+		if($hideInfo.hasClass('hide')) {
+			$buttonShowHide.text('More Information...');
+				
+		} else {
+			// if full table is shown, add following text to button
+			$buttonShowHide.text('<-- Less');
+		}
+	});
+
+
+	/**
+	 * Contact Area
+	 */
+	var $github = $('#git-hub'),
+		$linkedin = $('#linked-in'),
+		$googleplus = $('#google-plus');
+	$('#connect').mouseover(function() {
+		$github.fadeIn(200);
+		$linkedin.fadeIn(400);
+		$googleplus.fadeIn(600);
+	});
+	$('#connect').mouseleave(function() {
+		$github.fadeOut(5000);
+		$linkedin.fadeOut(5000);
+		$googleplus.fadeOut(5000);
+	});
+
+
+
 });

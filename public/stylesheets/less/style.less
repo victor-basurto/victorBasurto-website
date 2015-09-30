@@ -108,6 +108,13 @@ table {
 .contact-pres {
 	background-image: url("/images/contact4-image.jpg");
 }
+
+/*resume area*/
+table td {
+	width: 0;
+}
+
+/*contact area*/
 .clear-top {
 	margin-top: 25px;
 	margin-bottom: 15px;
@@ -129,24 +136,30 @@ table {
 	}
 	#mail:hover {	
 		-moz-transform: scale(1.3) rotate(360deg);
-		-webkit-transform: scale(0.5) rotate(360deg);
+		-webkit-transform: scale(1.3) rotate(360deg);
 		-o-transform: scale(1.3) rotate(360deg);
 		transform: scale(1.3) rotate(360deg);
 	}
 	#connect:hover {
 		-moz-transform: scale(1.3) rotate(360deg);
-		-webkit-transform: scale(0.5) rotate(360deg);
+		-webkit-transform: scale(1.3) rotate(-360deg);
 		-o-transform: scale(1.3) rotate(360deg);
 		transform: scale(1.3) rotate(360deg);
 	}
 	#pdf:hover {
 		-moz-transform: scale(1.5);
-		-webkit-transform: scale(0.8);
+		-webkit-transform: scale(1.3);
 		-o-transform: scale(1.5);
 		transform: scale(1.5);
 	}
 }
-
+.social-media-icon {
+	height: 60px;
+	size: 60px;
+}
+.no-show {
+	display: none;
+}
 
 /*-----------------------------------
 	Footer
