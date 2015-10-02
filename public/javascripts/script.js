@@ -80,10 +80,10 @@ $(document).on('ready', function() {
 
 	// show icons when hover
 	$('#connect').mouseover(function() {
-		$github.fadeIn(200);
-		$linkedin.fadeIn(400);
+		$github.fadeIn(1200);
+		$linkedin.fadeIn(900);
 		$googleplus.fadeIn(600);
-		$twitter.fadeIn(800);
+		$twitter.fadeIn(300);
 	});
 	// after 5 sec., hide icons assuming user will or will not click on it
 	$('#connect').mouseleave(function() {
@@ -92,7 +92,5 @@ $(document).on('ready', function() {
 		$googleplus.fadeOut(5000);
 		$twitter.fadeOut(5000);
 	});
-
-
 
 });
