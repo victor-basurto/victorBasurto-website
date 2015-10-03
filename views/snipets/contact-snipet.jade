@@ -2,25 +2,40 @@
 section.presentation.contact-pres#sectionContact
 	div.center-content.text-center
 		div.col-md-8.col-md-offset-2 
-			h2 Your Details
-			form
+			h2 Contact Me
+			form(method="post", data-toggle="validator", role="form", action="/")
 				div.col-md-4
 					div.form-group
-						input.form-control.input-lg#user-email(type="text", placeholder="Enter Name")
+						input.form-control.input-lg#user-name(type="text", placeholder="Enter Name",
+								name="user_name",
+								maxlength="30",
+								pattern="^[A-Za-z ]*$")
 				div.col-md-4
 					div.form-group
-						input.form-control.input-lg#user-email(type="email", placeholder="Email")
+						input.form-control.input-lg#user-email(type="email", placeholder="Email",
+								name="user_email",
+								maxlength="30",
+								data-toggle="tooltip",
+								title="E.g. user@gmail.com",
+								data-placement="bottom")
 				div.col-md-4
 					div.form-group
-						input.form-control.input-lg#user-subject(type="phone", placeholder="Phone Number")
+						input.form-control.input-lg#user-phone(type="tel", placeholder="Phone Number",
+								name="user_phone",
+								maxlength="10",
+								data-toggle="tooltip",
+								title="Only Numbers, 10 Digits",
+								pattern="^[0-9]{10}$")
 				div.col-md-6.col-md-offset-3
 					div.form-group
 						h2 Brief Description
-						textarea.form-control#user-desc(rows="6")
-			div.col-md-4.clear-top
-				div.icon-images
-					h3 Submit Info
-					img.contact-icon#mail(src="/images/contact/mail.svg")
+						textarea.form-control#user-desc(rows="6", name="user_desc",
+								maxlength="300")
+						span.comment-prompt No more than 300 Characters
+				div.col-md-4.clear-top
+					div.icon-images
+						h3 Submit Info
+						input.mail(type="submit" value="")
 			div.col-md-4.clear-top
 				div.icon-images
 					h3 Connect With Me

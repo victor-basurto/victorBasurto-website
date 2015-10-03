@@ -93,4 +93,43 @@ $(document).on('ready', function() {
 		$twitter.fadeOut(5000);
 	});
 
+	/**
+	 * Enabling Tooltip and Options
+	 */
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip({
+			delay: {
+				'show': 200,
+				'hide': 1000
+			}
+		});
+	});
+
+	/**
+	 * CountDown Comments
+	 */
+	$('#user-desc').keyup(function() {
+		$('.comment-prompt').show();
+		// set max character length
+		var max = 300;
+
+		// value length
+		var len = $(this).val().length;
+
+		if ( len >= max ) {
+			// if its more than the specified then show message
+			$('.comment-prompt').text(' You Have Reach the Limit');
+		} else {
+			// set 300 - user input
+			var character = max - len;
+			// show message
+			$('.comment-prompt').text(character + ' Characters Left');
+		}
+	});
+
+	// // submit info
+	// $('.mail').on('click', function(e) {
+	// 	e.preventDefault();
+	// });
+
 });
