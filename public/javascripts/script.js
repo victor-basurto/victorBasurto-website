@@ -80,10 +80,10 @@ $(document).on('ready', function() {
 
 	// show icons when hover
 	$('#connect').mouseover(function() {
-		$github.fadeIn(1200);
-		$linkedin.fadeIn(900);
-		$googleplus.fadeIn(600);
-		$twitter.fadeIn(300);
+		$github.fadeIn(300);
+		$linkedin.fadeIn(600);
+		$googleplus.fadeIn(900);
+		$twitter.fadeIn(1200);
 	});
 	// after 5 sec., hide icons assuming user will or will not click on it
 	$('#connect').mouseleave(function() {
@@ -126,10 +126,5 @@ $(document).on('ready', function() {
 			$('.comment-prompt').text(character + ' Characters Left');
 		}
 	});
-
-	// // submit info
-	// $('.mail').on('click', function(e) {
-	// 	e.preventDefault();
-	// });
 
 });
