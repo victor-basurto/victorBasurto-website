@@ -1,4 +1,5 @@
 var express = require('express');
+var nodemailer = require('nodemailer');
 var router = express.Router();
 
 // get path ../models/posts
@@ -32,6 +33,31 @@ router.post('/', function(req, res, next) {
 		for ( var i = 0; i < arguments.length; i++ ) {
 			console.log('Arguments ' + arguments[i]);
 		}
+
+		/**
+		 * NodeMailer
+		 */
+		var transporter = nodemailer.createTransport('SMTP', {
+			service: 'yahoo',
+			auth: {
+				user: 'someUser@email.com', // change this
+				pass: 'someKey' // change this
+			}
+		});
+		var mailOptions = {
+			from: obj.email,
+			to: 'the-email', //change this
+			subject: 'Job Opportunity',
+			html: '<h2>User: ' + obj.name + '</h2><br><h2>Phone Number: ' + obj.phone + '</h2><br><p><b>Content: </b>' + obj.desc + '</p>'
+		}
+		transporter.sendMail(mailOptions, function(err, res) {
+			if ( err ) {
+				console.log(err);
+			} else {
+				console.log('Message sent: ' + res.message);
+			}
+		});
+
 		// log errors and render index
 		if ( err ) {
 			console.log(err);

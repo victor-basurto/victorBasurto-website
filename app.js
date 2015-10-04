@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware');
+var nodemailer = require('nodemailer');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var db = mongoose.connection;
