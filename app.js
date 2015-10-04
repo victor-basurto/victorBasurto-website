@@ -14,6 +14,10 @@ var routes = require('./routes/index');
 
 var app = express();
 
+// set the port of website
+// process.env.PORT -> the port will be set by Heroku
+var port = process.env.PORT || 8080;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -64,5 +68,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
+// console the port
+app.listen(port, function() {
+  console.log('Website is running on http://localhost:' + port);
+});
 
 module.exports = app;

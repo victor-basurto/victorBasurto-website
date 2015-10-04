@@ -1,25 +1,9 @@
 $(document).on('ready', function() {
 	/**
-	 * Insert Id's Dinamically 
+	 * Activate Animation-Wow.js
 	 */
-	// (function(window, jQuery) {
-	// 	// array of id's
-	// 	sectionIds = [
-	// 		'#sectionHome',
-	// 		'#sectionResume',
-	// 		'#sectionAbout',
-	// 		'#sectionContact'
-	// 	];
-
-	// 	// obtain anchor tags where the id's will be inserted
-	// 	var $menuAnchor = $('li a');
-		
-	// 	// forEach method to insert each id on each anchor tag
-	// 	$.each(sectionIds, function(i, sectionId) {
-	// 		// $menuAnchor.attr("href", sectionId);
-	// 		$($menuAnchor[i]).attr("href", sectionId);
-	// 	});
-	// })(window, $);
+	new WOW().init();
+	
 
 	/**
 	 * Activate ScrollSpy Menu
