@@ -5,6 +5,14 @@
   "scripts": {
     "start": "node ./bin/www"
   },
+  "keywords" : [
+    "nodejs",
+    "resume",
+    "victor",
+    "basurto",
+    "jade",
+    "mongodb"
+  ],
   "dependencies": {
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
@@ -17,5 +25,10 @@
     "mongodb": "~2.0.45",
     "mongoose": "~4.1.9",
     "nodemailer": "~0.7.1"
-  }
+  },
+  "engines": {
+    "node": "4.0.0"
+  },
+  "author": "Victor Basurto",
+  "license": "MIT"
 }
