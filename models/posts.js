@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 // define path to mongodb
 // var dbPath = "mongodb://localhost/personalwebsite";
 // define path for Heroku
-var dbHerokuPath = "mongodb://victor:m0ng01abvict0r1985@ds029814.mongolab.com:29814/personalwebsite";
+var dbHerokuPath = "<mongolabPath>";
 // stablish connection into Database
 mongoose.connect(dbHerokuPath);
 
