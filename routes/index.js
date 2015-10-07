@@ -40,10 +40,8 @@ router.post('/', function(req, res, next) {
 		var transporter = nodemailer.createTransport('SMTP', {
 			service: 'Gmail',
 			auth: {
-				XOAuth2: {
-					user: process.env.USER_EMAIL, 
-					pass: process.env.GMAIL_PASS
-				}
+				user: process.env.USER_EMAIL, 
+				pass: process.env.GMAIL_PASS
 			},
 			debug: true
 		});
