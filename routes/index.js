@@ -38,13 +38,11 @@ router.post('/', function(req, res, next) {
 		 * NodeMailer
 		 */
 		var transporter = nodemailer.createTransport('SMTP', {
-			service: 'yahoo',
+			service: 'Gmail',
 			auth: {
-				OAuth: {
+				XOAuth2: {
 					user: process.env.USER_EMAIL, 
-					pass: process.env.USER_PASS, 
-					client_ID: process.env.CLIENT_ID,
-					client_Secret: process.env.CLIENT_SECRET
+					pass: process.env.GMAIL_PASS
 				}
 			},
 			debug: true
