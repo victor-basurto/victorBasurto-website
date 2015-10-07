@@ -40,9 +40,14 @@ router.post('/', function(req, res, next) {
 		var transporter = nodemailer.createTransport('SMTP', {
 			service: 'yahoo',
 			auth: {
-				user: 'someUser@email.com', // change this
-				pass: 'someKey' // change this
-			}
+				OAuth: {
+					user: process.env.USER_EMAIL, 
+					pass: process.env.USER_PASS, 
+					client_ID: process.env.CLIENT_ID,
+					client_Secret: process.env.CLIENT_SECRET
+				}
+			},
+			debug: true
 		});
 		var mailOptions = {
 			from: obj.email,
