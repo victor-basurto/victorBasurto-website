@@ -1,24 +1,6 @@
 /*-----------------------------------
 	General Config
 -------------------------------------*/
-/** { 
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	/*-moz-box-sizing: border-box; /* Firefox, other Gecko */
-	/*box-sizing: border-box; 
-}
-html,body,div,span,applet,object,iframe,h1,h2,
-h3,h4,h5,h6,p,blockquote,a,abbr,acronym,address,
-big,cite,del,dfn,em,img,ins,kbd,q,s,samp,small,
-strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,
-dd,ol,ul,li,fieldset,form,label,legend,table,caption,
-tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,
-embed,figure,figcaption,footer,header,hgroup,input,menu,
-nav,output,ruby,section,summary,time,mark,audio,video {
-	border: 0;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-}*/
 /*RGB for Transparent Gray*/
 @transparentGray: rgba(128, 128, 128, 0.31);
 @darkertransparentGray: rgba(128, 128, 140, 0.60);
@@ -35,7 +17,7 @@ body, html, td, tr {
 	height: 100%;
 	width: 100%;
 	padding: 0;
-	margin: 0;
+	margin-top: 0;
 	font-family: 'Lato', verdana;
 }
 section {
@@ -43,13 +25,10 @@ section {
 	height: 100%;
 	background-size: cover;
 	background-attachment: fixed;
-	/*background-position: center;*/
+	background-position: center;
 	margin: 0;
 	padding: 0;
 	display: table;
-}
-section:first-child {
-	/*margin-top: 150px;*/
 }
 .center-content {
 	.centering();
@@ -94,7 +73,7 @@ table {
 .myself-image {
 	width: 100%;
 	height: 180px;
-	border: 2px solid black;
+	border: 2px solid #000;
 	border-radius: 50%;
 	-webkit-animation-duration: 2s; /* animation duration animate.css Chrome */
   	-moz-animation-duration: 2s; /* animation duration animate.css Mozilla */
@@ -119,26 +98,26 @@ table {
 	font-family: 'Wire One', sans-serif;
 	font-size: 150px;
 	color: #fff;
-	letter-spacing: 14px;
-	margin-bottom: -80px;
-	margin-top: -80px;
-}
-.test {
-	border: 1px solid black;
+	letter-spacing: 10px;
+	margin-bottom: -60px;
+	margin-top: -200px;
 }*/
+
 /*-----------------------------------
 	About Section
 -------------------------------------*/
+.aboutme-info p {
+	font-family: 'Roboto', sans-serif;
+}
 .aboutme-info, .contactme-info {
 	width: 100%;
 	background: @darkertransparentGray;
 	color: #fff;
 	font-size: 16px;
-	/*border: 1px solid black;*/
 }
-.margintop-pulldown {
+/*.margintop-pulldown {
 	margin-top: 22px;
-}
+}*/
 @media(max-width: 1000px) {
 	.margintop-pulldown {
 		margin-top: 0;
@@ -146,7 +125,7 @@ table {
 	}
 }
 .myself-pres {
-	background-image: url("/images/sandiego.jpg");
+	background-image: url("/images/sandiego-pic.jpg");
 }
 .resume-pres {
 	background-image: url("/images/header-navbar-image.png");
@@ -223,6 +202,14 @@ table td {
 	.icon-images {
 		padding-bottom: 25px;
 	}
+}
+@media(max-width: 991px) {
+	.img-mrg {
+		margin-top: 255px;
+	}
+}
+.about-img-mrg {
+	margin-top: 15px;
 }
 
 .social-media-icon {

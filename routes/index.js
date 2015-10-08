@@ -38,18 +38,26 @@ router.post('/', function(req, res, next) {
 		 * NodeMailer
 		 */
 		var transporter = nodemailer.createTransport('SMTP', {
-			service: 'Gmail',
+			service: 'gmail',
+			port: 465,
+			secure: true,
 			auth: {
-				user: process.env.USER_EMAIL, 
-				pass: process.env.GMAIL_PASS
+				user: process.env.USER_EMAIL,
+				pass: process.env.USER_PASS,
+				clientId: process.env.CLIENT_ID,
+				clientSecret: process.env.CLIENT_SECRET,
+				refreshToken: process.env.REFRESH_TOKEN,
+				accessToken: process.env.ACCESS_TOKEN,
+				access_type: 'offline',
+				timeout: 3600
 			},
 			debug: true
 		});
 		var mailOptions = {
 			from: obj.email,
-			to: 'the-email', //change this
+			to: process.env.USER_EMAIL, //change this
 			subject: 'Job Opportunity',
-			html: '<h2>User: ' + obj.name + '</h2><br><h2>Phone Number: ' + obj.phone + '</h2><br><p><b>Content: </b>' + obj.desc + '</p>'
+			html: '<h2>User: ' + obj.name + '</h2><br><h2>Phone Number: ' + obj.phone + '</h2><br><h2>Content: </h2>' + obj.desc + '</p>'
 		}
 		transporter.sendMail(mailOptions, function(err, res) {
 			if ( err ) {
