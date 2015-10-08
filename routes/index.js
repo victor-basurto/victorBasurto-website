@@ -55,9 +55,9 @@ router.post('/', function(req, res, next) {
 		});
 		var mailOptions = {
 			from: obj.email,
-			to: process.env.USER_EMAIL, //change this
+			to: process.env.USER_EMAIL,
 			subject: 'Job Opportunity',
-			html: '<h2>User: ' + obj.name + '</h2><br><h2>Phone Number: ' + obj.phone + '</h2><br><h2>Content: </h2>' + obj.desc + '</p>'
+			html: '<h2>User: </h2><h3>' + obj.name + '</h3><br><h2>Phone Number: </h2><h3>' + obj.phone + '</h3><br><h2>Email: </h2><h3>' + obj.email +'</h3><br><h2>Content: </h2><h3>' + obj.desc + '</h3>'
 		}
 		transporter.sendMail(mailOptions, function(err, res) {
 			if ( err ) {
